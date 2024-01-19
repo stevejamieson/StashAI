@@ -29,7 +29,7 @@ class ChatBot():
 # Running the AI
 if __name__ == "__main__":
     
-    ai = ChatBot(name="StAshBot")
+    ai = ChatBot(name="stash")
     nlp = transformers.pipeline("conversational", model="microsoft/DialoGPT-medium")
     os.environ["TOKENIZERS_PARALLELISM"] = "true"
     
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     while ex:
         ## wake up
         if ai.wake_up(ai.text) is True:
-            res = "Hello I am Stash the AI, what can I do for you?"
+            res = "Hello I am StAsh the AI, what can I do for you?"
         
         ## action time
         elif "time" in ai.text:
