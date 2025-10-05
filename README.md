@@ -3,6 +3,7 @@ AI and NLP powered Chatbot -  converted to Azure Functions
 
 -using  nltk - punkt - for NLP/AI
 >Natural Language Tokenizer
+>NLTK's tokenizer tokenize patterns for better vectorization
 
 -using FastAPI -to serve it as a web API
 
