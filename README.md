@@ -1,8 +1,9 @@
 # StAshbot
 A basic ChatBot POC using AI and NLP
 
+using  nltk - punkt - for NLP/AI
+using FastAPI -to serve it as a web API
 
-
-Link to Article : [([https://www.analyticsvidhya.com/blog/2021/10/complete-guide-to-build-your-ai-chatbot-with-nlp-in-python/](https://blog.hubspot.com/website/python-ai-chat-bot))
-
+Running From Terminal on Local will start the local FastApi 
+  uvicorn main:app 
 
