@@ -1,64 +1,41 @@
+import json
+import random
+import nltk
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
 
-# for language model
-import transformers
+# Download tokenizer
+nltk.download('punkt')
 
-import os
-import time
+# Load intents
+with open("intents.json") as f:
+    data = json.load(f)
 
-# for data
-import os
-import datetime
-import numpy as np
+# Prepare training data
+X, y = [], []
+for intent in data["intents"]:
+    for pattern in intent["patterns"]:
+        X.append(pattern.lower())
+        y.append(intent["tag"])
 
+# Vectorize and train
+vectorizer = CountVectorizer()
+X_vec = vectorizer.fit_transform(X)
+model = LogisticRegression()
+model.fit(X_vec, y)
 
-# Building the AI
-class ChatBot():
-    def __init__(self, name):
-        print("----- Starting up", name, "-----")
-        self.name = name
-     
-    @staticmethod
-    def wake_up(self, text):
-        return True if self.name in text.lower() else False
+# Chat loop
+def chatbot_response(user_input):
+    input_vec = vectorizer.transform([user_input.lower()])
+    tag = model.predict(input_vec)[0]
+    for intent in data["intents"]:
+        if intent["tag"] == tag:
+            return random.choice(intent["responses"])
 
-    @staticmethod
-    def action_time():
-        return datetime.datetime.now().time().strftime('%H:%M')
-
-
-# Running the AI
-if __name__ == "__main__":
-    
-    ai = ChatBot(name="stash")
-    nlp = transformers.pipeline("conversational", model="microsoft/DialoGPT-medium")
-    os.environ["TOKENIZERS_PARALLELISM"] = "true"
-    
-    ex=True
-    while ex:
-        ## wake up
-        if ai.wake_up(ai.text) is True:
-            res = "Hello I am StAsh the AI, what can I do for you?"
-        
-        ## action time
-        elif "time" in ai.text:
-            res = ai.action_time()
-        
-        ## respond politely
-        elif any(i in ai.text for i in ["thank","thanks"]):
-            res = np.random.choice(["you're welcome!","anytime!","no problem!","cool!","I'm here if you need me!","forget about it"])
-        
-        elif any(i in ai.text for i in ["exit","close"]):
-            res = np.random.choice(["Tata","Have a good day","Buh Bye","Goodbye","Hope to see you again sometime soon","peace out!"])
-            
-            ex=False
-        ## conversation
-        else:   
-            if ai.text=="ERROR":
-                res = np.random.choice(["Sorry, come again?","Dude, whats wrong?","That aint working","You gotta repeat that"])
-            
-            else:
-                chat = nlp(transformers.Conversation(ai.text), pad_token_id=50256)
-                res = str(chat)
-                res = res[res.find("bot >> ")+6:].strip()
-
-    print("----- Closing down StAshBot -----")
+print("🤖 Chatbot is ready! Type 'exit' to quit.")
+while True:
+    user_input = input("You: ")
+    if user_input.lower() in ["exit", "quit"]:
+        print("Bot: Goodbye!")
+        break
+    print("Bot:", chatbot_response(user_input))
