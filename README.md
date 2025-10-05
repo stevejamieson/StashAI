@@ -1,5 +1,5 @@
 # StAshbot
-AI and NLP oowered Chatbot -  converted to Azure Functions 
+AI and NLP powered Chatbot -  converted to Azure Functions 
 
 -using  nltk - punkt - for NLP/AI
 >Natural Language Tokenizer
