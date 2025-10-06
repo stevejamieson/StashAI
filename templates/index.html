@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatBot</title>
+</head>
+<body>
+    <h1>Chat with the StAshBot</h1>
+    <form method="post">
+        <input type="text" name="user_input" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+    {% if response %}
+        <p><strong>Bot:</strong> {{ response }}</p>
+    {% endif %}
+</body>
+</html>

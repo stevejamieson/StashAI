@@ -3,7 +3,7 @@
     {
       "tag": "greeting",
       "patterns": ["Hi", "Hello", "Hey", "Good morning"],
-      "responses": ["Hello!", "Hi there!", "Hey! How can I help?"]
+      "responses": ["Hello!", "Whats going on?","How are ya?","Hi there!", "Hey! How can I help?","Howdy", "Yo", "Greetings", "Whats up?"]
     },
     {
       "tag": "goodbye",
@@ -12,8 +12,33 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "Much appreciated"],
+      "patterns": ["Thanks", "Thank you", "Cheers","Much appreciated"],
       "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+    },
+    {
+     "tag": "help",
+     "patterns": ["Can you help me?", "I need assistance", "What can you do?"],
+     "responses": ["Sure! I'm here to help.", "Ask me anything.", "How can I assist you today?"]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["What's the weather like?", "Is it raining?", "Tell me today's forecast",  "Tell me the weather"],
+      "responses": ["I can't check the weather yet, but I can chat!", "Try asking a weather app for that."]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": ["I'm not sure I understand.", "Can you rephrase that?", "Let's try something else."]
+    },
+    {
+      "tag": "joke",
+      "patterns": ["Tell me a joke", "Make me laugh", "Got any jokes?"],
+      "responses": ["Why don't scientists trust atoms? Because they make up everything!", "I would tell you a construction joke, but I'm still working on it."]
+    },
+    {
+      "tag": "name",
+      "patterns": ["What's your name?", "Who are you?", "Do you have a name?"],
+      "responses": ["I'm your friendly chatbot! created by StAsh AI", "You can call me ChatBuddy.", "I'm here to help—no name needed!"]
     }
   ]
 }
