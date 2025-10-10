@@ -2,28 +2,28 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "Good morning"],
-      "responses": ["Hello!", "Whats going on?","How are ya?","Hi there!", "Hey! How can I help?","Howdy", "Yo", "Greetings", "Whats up?"]
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good afternoon", "Good evening", "Howdy", "Yo", "Greetings"],
+      "responses": ["Hello!", "What's going on?", "How are ya?", "Hi there!", "Hey! How can I help?", "Howdy", "Yo", "Greetings", "What's up?"]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "Goodbye", "See you later"],
-      "responses": ["Goodbye!", "Take care!", "See you soon!"]
+      "patterns": ["Bye", "Goodbye", "See you later", "Catch you later", "Talk to you soon", "Farewell"],
+      "responses": ["Goodbye!", "Take care!", "See you soon!", "Catch you later!", "Farewell!"]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "Cheers","Much appreciated"],
-      "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+      "patterns": ["Thanks", "Thank you", "Cheers", "Much appreciated", "Thanks a lot", "Thanks so much"],
+      "responses": ["You're welcome!", "No problem!", "Glad to help!", "Anytime!", "Happy to help!"]
     },
     {
-     "tag": "help",
-     "patterns": ["Can you help me?", "I need assistance", "What can you do?"],
-     "responses": ["Sure! I'm here to help.", "Ask me anything.", "How can I assist you today?"]
+      "tag": "help",
+      "patterns": ["Can you help me?", "I need assistance", "What can you do?", "I need help", "Help me out", "Support me please"],
+      "responses": ["Sure! I'm here to help.", "Ask me anything.", "How can I assist you today?", "I'm ready to support you."]
     },
     {
       "tag": "weather",
-      "patterns": ["What's the weather like?", "Is it raining?", "Tell me today's forecast",  "Tell me the weather"],
-      "responses": ["I can't check the weather yet, but I can chat!", "Try asking a weather app for that."]
+      "patterns": ["What's the weather like?", "Is it raining?", "Tell me today's forecast", "Tell me the weather", "Is it sunny?", "Will it snow today?"],
+      "responses": ["I can't check the weather yet, but I can chat!", "Try asking a weather app for that.", "I'm not connected to weather data, but I can still talk!"]
     },
     {
       "tag": "unknown",
@@ -32,13 +32,13 @@
     },
     {
       "tag": "joke",
-      "patterns": ["Tell me a joke", "Make me laugh", "Got any jokes?"],
-      "responses": ["Why don't scientists trust atoms? Because they make up everything!", "I would tell you a construction joke, but I'm still working on it."]
+      "patterns": ["Tell me a joke", "Make me laugh", "Got any jokes?", "Say something funny", "I want to laugh"],
+      "responses": ["Why don't scientists trust atoms? Because they make up everything!", "I would tell you a construction joke, but I'm still working on it.", "Why did the scarecrow win an award? Because he was outstanding in his field!"]
     },
     {
       "tag": "name",
-      "patterns": ["What's your name?", "Who are you?", "Do you have a name?"],
-      "responses": ["I'm your friendly chatbot! created by StAsh AI", "You can call me ChatBuddy.", "I'm here to help—no name needed!"]
+      "patterns": ["What's your name?", "Who are you?", "Do you have a name?", "Tell me your name", "What should I call you?"],
+      "responses": ["I'm your friendly chatbot! Created by StAsh AI.", "You can call me ChatBuddy.", "I'm here to help—no name needed!", "I'm ChatBuddy, your virtual assistant."]
     }
   ]
 }

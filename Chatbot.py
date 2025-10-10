@@ -48,7 +48,7 @@ class ChatModel:
         max_prob = max(probs)
         tag = self.model.classes_[probs.argmax()]
 
-        if max_prob < 0.5:  # You can tune this threshold
+        if max_prob < 0.4:  # You can tune this threshold
             unknown_intent = next((i for i in self.intents["intents"] if i["tag"] == "unknown"), None)
             if unknown_intent:
                 return random.choice(unknown_intent["responses"])
